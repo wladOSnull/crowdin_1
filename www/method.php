@@ -3,6 +3,8 @@
 		$_POST['F'] != null && 
 		($_POST['Fib'] || $_POST['Sim'] || $_POST['Mer'])) 
 	{
+		include 'class_Sequence.php';
+		
 		$type = $_POST['Fib'];
 		$length = $_POST['L'];
 		$way_file = $_POST['F'];
@@ -14,21 +16,21 @@
 		{
 			require('class_Fib.php');
 				
-			$var = new Fib($length, $way_file);
+			$var = new Fibonacci($length, $way_file);
 			$var->demonstration();			
 		}
 		if($_POST['Sim'])
 		{
 			require('class_Sim.php');
 				
-			$var = new Sim($length, $way_file);
+			$var = new Simple($length, $way_file);
 			$var->demonstration();
 		}	
 		if($_POST['Mer'])
 		{
 			require('class_Mer.php');
 				
-			$var = new Mer($length, $way_file);
+			$var = new Mersen($length, $way_file);
 			$var->demonstration();
 		}	
 		

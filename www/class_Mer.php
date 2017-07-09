@@ -1,5 +1,6 @@
 <?php ###declaration class Mer
-	class Mer
+#include 'class_Sequence.php';
+	/*class Mer
 	{
 		protected $limit = 0;
 		protected $mas = array();
@@ -95,6 +96,17 @@
 			$this->show();
 			$this->fwrite_line();
 			$this->fwrite_table();
+		}
+	}*/
+	
+	class Mersen extends Sequence
+	{
+		public function run()
+		{
+			for($i = 1; $i < $this->limit; $i++)
+			{
+				$this->mas[] = (pow(2, $i) - 1);
+			}
 		}
 	}
 ?>

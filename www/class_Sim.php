@@ -1,5 +1,6 @@
 <?php ###declaration class Sim
-	class Sim
+	#include 'class_Sequence.php';
+	/*class Sim
 	{
 		protected $limit = 0;
 		protected $mas = array();
@@ -110,6 +111,31 @@
 			$this->show();
 			$this->fwrite_line();
 			$this->fwrite_table();
+		}
+	}*/
+	class Simple extends Sequence
+	{
+		public function run()
+		{
+			$this->mas[0] = 2;
+			$this->mas[1] = 3;
+
+			for($i = 0; $i < $this->limit; $i++)
+			{
+				$flag = false;
+
+				for($j = 2; $j < ($i/2); $j++)
+				{
+					if(($i%$j) != 0) $flag = true;
+					else
+					{
+						$flag = false;
+						break;
+					}
+				}
+
+				if($flag) $this->mas[] = $i;
+			}
 		}
 	}
 ?>
